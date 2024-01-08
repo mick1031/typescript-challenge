@@ -6,5 +6,10 @@
  * Math.max 方法可以接受多個參數並返回其中的最大值，展開運算符可以將一個陣列轉換為多個參數。
  */
 export function findMaxNumber(numbers: number[]): number {
-    // 在此實現函式
+    return numbers.reduce((a: number, b: number): number => {
+        if (a == 0) {
+            return b;
+        }
+        return b > a ? b : a;
+    }, 0);
 }
