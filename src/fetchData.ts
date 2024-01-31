@@ -7,3 +7,12 @@
 
 // 請在下方寫下你的程式碼
 
+type foo = {
+    id: string; 
+    title: string;
+};
+
+export const fetchData: (url: string) => Promise<foo> = async (url) => {
+    const res =  await fetch(url);
+    return res.json();
+ }

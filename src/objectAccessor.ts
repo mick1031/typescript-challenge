@@ -14,4 +14,14 @@
  */
 export function createObjectAccessor<T>(obj: T) {
     // 請在此處寫下你的程式碼
+
+    function get(field: keyof T) {
+        return obj[field];
+    }
+
+    function set(field: keyof T, value: typeof obj[keyof T]) {
+        obj[field] = value;
+    }
+
+    return { get, set };
 }
